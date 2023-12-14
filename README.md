@@ -13,7 +13,6 @@ Welcome to the Backend Testing Project by Zia Muhammad! This project focuses on 
 
 Before running the application, make sure to set up the following environment variables in a `.env` file in the project root:
 
-```env
 # Authentication Settings
 AUTH_SECRET = "testing_backend"
 AUTH_EXPIRES = "6400"
