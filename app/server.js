@@ -5,7 +5,7 @@ const errorHandler = require("./middlewares/errorHandler");
 const passport = require('passport');
 
 // Settings
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5002;
 
 // Middlewares
 app.use(express.json());

@@ -3,26 +3,12 @@ const router = express.Router();
 const passport = require('passport');
 const UserController = require("./controller/UserController");
 
+const authtoken = require("./middlewares/token_user");
 
-router.get(
-    "/api/user",
-    UserController.index
-  );
+router.post('/v1/user/create', UserController.signupUser);
+router.get('/v1/user/balance',authtoken, UserController.getBallance);
+router.post('/v1/user/balance',authtoken, UserController.topUp);
+router.post('/v1/user/transfer',authtoken, UserController.transfer);
 
-  router.post(
-    "/api/user",
-    UserController.create
-  );
-
-  router.get(
-    "/api/user/find/phone",
-    UserController.findPhone
-  );
-
-
-router.get("/api/naver/token", passport.authenticate('naver-token', null),
-function(req, res, next){
-    res.send(req.user ? 200 : 401);
-});
 
 module.exports = router;
